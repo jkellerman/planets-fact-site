@@ -1,0 +1,21 @@
+{
+  "name": "planets-fact-site",
+  "version": "1.0.0",
+  "description": "![Design preview for the Planets fact site coding challenge](./preview.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "prod": "parcel build src/index.html --no-source-maps --public-url ./",
+    "deploy": "rm -rf dist/ && npm run prod && gh-pages -d dist"
+  },
+  "homepage": "https://jkellerman.github.io/planets-fact-site",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  },
+  "dependencies": {
+    "gh-pages": "^3.2.3"
+  }
+}
