@@ -1,0 +1,102 @@
+@use "abstracts" as a;
+
+header {
+  border-bottom: a.$borders;
+  margin-bottom: 1.25rem;
+}
+
+.mobile__header {
+  @include a.flex-row-space-between;
+  @include a.center-div;
+  position: relative;
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+  z-index: 5;
+}
+
+.title {
+  font-size: 1.75rem;
+  text-transform: uppercase;
+}
+
+.dim {
+  fill: a.$border-color;
+}
+
+.mobile__nav {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 5rem;
+  z-index: 4;
+  background-color: a.$background;
+  padding: 1.5rem 1.25rem;
+
+  li {
+    list-style: none;
+    @include a.flex-row-space-between;
+    border-bottom: a.$borders;
+    padding: 1.25rem 0;
+  }
+  li:last-of-type {
+    border-bottom: none;
+  }
+}
+
+.no__scroll {
+  height: 100%;
+  overflow: hidden;
+}
+
+.hide {
+  display: none;
+}
+
+.bullet-point {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.bullet-point--mercury {
+  background-color: a.$mercury-mobile-nav;
+}
+.bullet-point--venus {
+  background-color: a.$venus-mobile-nav;
+}
+.bullet-point--earth {
+  background-color: a.$earth-mobile-nav;
+}
+.bullet-point--mars {
+  background-color: a.$mars-mobile-nav;
+}
+.bullet-point--jupiter {
+  background-color: a.$jupiter-mobile-nav;
+}
+.bullet-point--saturn {
+  background-color: a.$saturn-mobile-nav;
+}
+.bullet-point--uranus {
+  background-color: a.$uranus-mobile-nav;
+}
+.bullet-point--neptune {
+  background-color: a.$neptune-mobile-nav;
+}
+
+.planet__link {
+  display: flex;
+  gap: 1.5625rem;
+
+  &--name {
+    text-transform: uppercase;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    letter-spacing: 1.36px;
+    align-self: center;
+    transform: translateY(0.075rem);
+  }
+}
+
+.chevron {
+  transform: translateX(-0.5rem);
+}
