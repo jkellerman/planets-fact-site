@@ -8,10 +8,8 @@ header {
 .mobile__header {
   @include a.flex-row-space-between;
   @include a.center-div;
-  position: relative;
   margin-top: 1rem;
   padding-bottom: 1rem;
-  z-index: 5;
 }
 
 .title {
