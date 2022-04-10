@@ -1,23 +1,22 @@
 @use "abstracts" as a;
 
 .grid {
-  @include a.center-div;
+  // @include a.center-div;
   display: grid;
   gap: 5.9375rem;
   justify-items: center;
 }
-
 .tabs__container {
   width: 100%;
-  border-bottom: a.$borders;
-  margin-left: unset;
-  margin-right: unset;
 }
 
 .tabs {
-  @include a.flex-row-space-between;
-  @include a.center-div;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 2rem;
+  margin: 0 auto;
   width: 95%;
+  transform: translateX(-0.2rem);
 }
 
 .tab {
@@ -26,14 +25,20 @@
   font-weight: 700;
   letter-spacing: 1.93px;
   color: a.$border-color;
-  padding-bottom: 1.0625rem;
-  border-bottom: 2px solid;
-  border-bottom-color: a.$mercury;
+  padding-top: 0.25rem;
+  padding-bottom: 1.25rem;
 }
 
 .num,
 .hide__text {
   display: none;
+}
+
+.line {
+  height: 0.1px;
+  width: 100%;
+  background-color: a.$border-color;
+  border: none;
 }
 
 .planet {
@@ -55,7 +60,7 @@
 .content {
   font-size: 0.6875rem;
   line-height: 22px;
-  width: 95%;
+  width: 85%;
   margin: 0 auto;
   opacity: 0.8;
   margin-bottom: 2rem;
