@@ -41,8 +41,13 @@
   border: none;
 }
 
+.planet__container {
+  display: flex;
+  justify-content: center;
+}
+
 .planet {
-  width: 111px;
+  width: calc(100% / 2.61);
 }
 
 .content__container {
