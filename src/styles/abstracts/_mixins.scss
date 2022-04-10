@@ -1,3 +1,5 @@
+@use "./variables" as a;
+
 @mixin center-div {
   width: 87.5%;
   margin: 0 auto;
@@ -12,4 +14,10 @@
 @mixin flex-column-space-between {
   display: flex;
   flex-direction: column;
+}
+
+@mixin tablet {
+  @media (min-width: a.$tablet) {
+    @content;
+  }
 }

@@ -1,7 +1,6 @@
 @use "abstracts" as a;
 
 .grid {
-  // @include a.center-div;
   display: grid;
   gap: 5.9375rem;
   justify-items: center;

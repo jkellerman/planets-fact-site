@@ -10,11 +10,48 @@ header {
   @include a.center-div;
   margin-top: 1rem;
   padding-bottom: 1rem;
+
+  .desktop__nav {
+    display: none;
+  }
+
+  @include a.tablet {
+    @include a.flex-column-space-between;
+    margin-top: 2rem;
+
+    .desktop__nav {
+      display: flex;
+      margin: 0 auto;
+      margin-top: 2.4375rem;
+      width: 100%;
+
+      ul {
+        @include a.flex-row-space-between;
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+
+      li {
+        list-style: none;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 0.6875rem;
+        color: a.$border-color;
+      }
+    }
+  }
 }
 
 .title {
   font-size: 1.75rem;
   text-transform: uppercase;
+}
+
+.hamburger {
+  cursor: pointer;
+  @include a.tablet {
+    display: none;
+  }
 }
 
 .dim {
