@@ -1,0 +1,26 @@
+@use "abstracts" as a;
+.planet__facts--container {
+  @include a.flex-column-space-between;
+  margin-bottom: 3rem;
+}
+
+.fact__container {
+  @include a.center-div;
+  @include a.flex-row-space-between;
+  border: a.$borders;
+  margin-bottom: 0.5rem;
+  padding: 1rem 1.5rem;
+}
+
+.fact__header {
+  color: a.$border-color;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.5rem;
+  letter-spacing: 0.73px;
+}
+
+.stat {
+  text-transform: uppercase;
+  font-size: 1.25rem;
+}
