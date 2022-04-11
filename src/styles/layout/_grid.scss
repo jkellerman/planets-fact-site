@@ -70,7 +70,9 @@
 }
 
 .overview {
-  transform: translateX(0.1rem);
+  span {
+    margin-right: 1.15rem;
+  }
 }
 
 .line {
