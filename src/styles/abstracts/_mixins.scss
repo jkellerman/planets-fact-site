@@ -28,3 +28,9 @@
     @content;
   }
 }
+
+@mixin desktop {
+  @media (min-width: a.$desktop) {
+    @content;
+  }
+}
