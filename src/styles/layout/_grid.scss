@@ -6,11 +6,10 @@
   justify-items: center;
   @include a.tablet {
     width: 90%;
-    margin: 0 auto;
+    margin: 7.875rem auto 1.6875rem;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 0;
     row-gap: 8.125rem;
-    margin-top: 7.875rem;
   }
 }
 .tabs__container {
