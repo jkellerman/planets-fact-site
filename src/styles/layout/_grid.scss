@@ -69,6 +69,10 @@
   color: a.$border-color;
 }
 
+.overview {
+  transform: translateX(0.1rem);
+}
+
 .line {
   height: 0.1px;
   width: 100%;
