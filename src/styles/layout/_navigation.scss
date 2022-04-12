@@ -5,7 +5,7 @@ header {
   margin-bottom: 1.25rem;
 }
 
-.mobile__header {
+.header {
   @include a.flex-row-space-between;
   @include a.center-div;
   margin-top: 1rem;
@@ -52,6 +52,7 @@ header {
     margin-top: 0;
     width: 95%;
     padding-bottom: 1.6875rem;
+    height: 100%;
 
     .title {
       padding-top: 1.375rem;
@@ -60,10 +61,35 @@ header {
     .desktop__nav {
       width: 50%;
       margin: 0;
+      margin-top: -0.5rem;
+      height: 100%;
 
       ul {
         margin: 0;
-        padding-top: 2.0625rem;
+        height: 50px;
+        align-items: flex-end;
+
+        li {
+          display: flex;
+          height: 100%;
+          align-items: flex-end;
+          position: relative;
+        }
+
+        li::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          width: 100%;
+          background-color: a.$mercury;
+          height: 2px;
+          transition: transform 300ms ease-in-out;
+          transform: scaleX(0);
+        }
+
+        li:hover::before {
+          transform: scaleX(1);
+        }
       }
     }
   }

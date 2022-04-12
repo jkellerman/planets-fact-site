@@ -28,7 +28,7 @@
   @include a.tablet {
     display: flex;
     align-items: center;
-    grid-area: 2/2;
+    grid-area: 2 / 2;
   }
 
   @include a.large {
