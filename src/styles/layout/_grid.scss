@@ -81,6 +81,11 @@
   }
 }
 
+.tab:hover {
+  background-color: a.$tab-hover;
+  transition: 0.25s ease-in-out;
+}
+
 .num,
 .hide__text {
   display: none;
