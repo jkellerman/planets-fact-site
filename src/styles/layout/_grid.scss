@@ -82,8 +82,10 @@
 }
 
 .tab:hover {
-  background-color: a.$tab-hover;
-  transition: 0.25s ease-in-out;
+  @include a.tablet {
+    background-color: a.$tab-hover;
+    transition: 0.25s ease-in-out;
+  }
 }
 
 .num,
