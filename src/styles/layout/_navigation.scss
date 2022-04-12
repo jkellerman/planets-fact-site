@@ -81,10 +81,15 @@ header {
           position: absolute;
           top: 0;
           width: 100%;
-          background-color: a.$mercury;
           height: 2px;
           transition: transform 300ms ease-in-out;
           transform: scaleX(0);
+        }
+
+        @for $i from 1 through length(a.$colors) {
+          li:nth-child(#{length(a.$colors)}n + #{$i})::before {
+            background-color: nth(a.$colors, $i);
+          }
         }
 
         li:hover::before {
