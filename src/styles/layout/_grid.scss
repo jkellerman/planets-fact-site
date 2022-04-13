@@ -119,6 +119,7 @@
 
 .planet__container {
   display: flex;
+  position: relative;
   justify-content: center;
   @include a.tablet {
     grid-column: 1 / span 2;
@@ -136,6 +137,15 @@
   @include a.large {
     width: 100%;
   }
+}
+
+.planet__geology {
+  display: none;
+  position: absolute;
+  width: 163px;
+  margin-left: auto;
+  margin-right: auto;
+  bottom: -30%;
 }
 
 .content__container {

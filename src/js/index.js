@@ -11,6 +11,10 @@ const desktopLinks = Array.from(document.querySelectorAll(".desktop__links"));
 const overview = document.querySelector("[data-overview]");
 const structure = document.querySelector("[data-structure]");
 const surface = document.querySelector("[data-surface]");
+const image = document.querySelector("[data-planet]");
+const content = document.querySelector("[data-content]");
+const wiki = document.querySelector("[data-wiki]");
+const planetGeology = document.querySelector("[data-planet-geology]");
 
 const getPlanet = (planet) => {
   // Split string from assets to use for adding images dynamically
@@ -20,9 +24,9 @@ const getPlanet = (planet) => {
     .replace(/\.svg/g, "");
   // dynamically render data to browser
   const name = (document.querySelector("[data-name]").innerText = planet.name);
-  document.querySelector("[data-planet]").src = assets[jsonImagePath];
-  document.querySelector("[data-content]").innerText = planet.overview.content;
-  document.querySelector("[data-wiki]").href = planet.overview.source;
+  image.src = assets[jsonImagePath];
+  content.innerText = planet.overview.content;
+  wiki.href = planet.overview.source;
   document.querySelector("[data-rotation]").innerText = planet.rotation;
   document.querySelector("[data-revolution]").innerText = planet.revolution;
   document.querySelector("[data-radius]").innerText = planet.radius;
@@ -35,7 +39,7 @@ const getPlanet = (planet) => {
 
 // render earth to browser on load
 
-getPlanet(data[3]);
+getPlanet(data[2]);
 
 // click event for mobile navigation
 
@@ -52,6 +56,7 @@ desktopLinks.forEach((link) => {
     const index = desktopLinks.indexOf(link);
     getPlanet(data[index]);
     removeTabStyles(structure, surface);
+    planetGeology.style.display = "none";
   });
 });
 
@@ -61,12 +66,38 @@ overview.addEventListener("click", () => {
   const name = document.querySelector("[data-name]").innerText.toLowerCase();
   addTabStyles(overview, name);
   removeTabStyles(structure, surface);
+  // Loop through array to find name that matches the current planet
+  const capitalised = capitalizeFirstLetter(name);
+  const planet = data.find((element) => element.name === capitalised);
+  // add internal structure image
+  const jsonImagePath = planet.images.planet
+    .split("/")
+    .pop()
+    .replace(/\.svg/g, "");
+  image.src = assets[jsonImagePath];
+  // add structure content
+  content.innerText = planet.overview.content;
+  wiki.href = planet.overview.source;
+  planetGeology.style.display = "none";
 });
 structure.addEventListener("click", () => {
   // get the current innertext of h1 tag to use for color change
   const name = document.querySelector("[data-name]").innerText.toLowerCase();
   addTabStyles(structure, name);
   removeTabStyles(overview, surface);
+  // Loop through array to find name that matches the current planet
+  const capitalised = capitalizeFirstLetter(name);
+  const planet = data.find((element) => element.name === capitalised);
+  // add internal structure image
+  const jsonImagePath = planet.images.internal
+    .split("/")
+    .pop()
+    .replace(/\.svg/g, "");
+  image.src = assets[jsonImagePath];
+  // add structure content
+  content.innerText = planet.structure.content;
+  wiki.href = planet.structure.source;
+  planetGeology.style.display = "none";
 });
 
 surface.addEventListener("click", () => {
@@ -74,6 +105,24 @@ surface.addEventListener("click", () => {
   const name = document.querySelector("[data-name]").innerText.toLowerCase();
   addTabStyles(surface, name);
   removeTabStyles(overview, structure);
+  const capitalised = capitalizeFirstLetter(name);
+  const planet = data.find((element) => element.name === capitalised);
+  // add internal structure image
+  const jsonImagePath = planet.images.geology
+    .split("/")
+    .pop()
+    .replace(/\.png/g, "");
+  const jsonImagePathOverview = planet.images.planet
+    .split("/")
+    .pop()
+    .replace(/\.svg/g, "");
+  image.src = assets[jsonImagePathOverview];
+  planetGeology.style.display = "block";
+  planetGeology.src = assetsPng[jsonImagePath];
+  // add structure content
+  content.innerText = planet.geology.content;
+  wiki.href = planet.geology.source;
+  console.log(jsonImagePathOverview);
 });
 
 function addTabStyles(tab, color) {
@@ -87,4 +136,8 @@ function removeTabStyles(tab, tab2) {
   tab.style.border = null;
   tab2.style.backgroundColor = null;
   tab2.style.border = null;
+}
+
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
 }
