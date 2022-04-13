@@ -7,8 +7,8 @@ const hamburger = document.querySelector("[data-hamburger]");
 const hamburgerFill = document.querySelector("[data-hamburger-fill]");
 const body = document.querySelector("body");
 const mobileNav = document.querySelector("[data-mobile-nav]");
-const navLinks = document.querySelectorAll("li");
-console.log(navLinks);
+const desktopLinks = Array.from(document.querySelectorAll(".desktop__links"));
+console.log(desktopLinks);
 
 const getPlanet = (planet) => {
   // Split string from assets to use for adding images dynamically
@@ -16,6 +16,7 @@ const getPlanet = (planet) => {
     .split("/")
     .pop()
     .replace(/\.svg/g, "");
+  // dynamically render data to browser
   document.querySelector("[data-planet]").src = assets[jsonImagePath];
   document.querySelector("[data-name]").innerText = planet.name;
   document.querySelector("[data-content]").innerText = planet.overview.content;
@@ -26,10 +27,23 @@ const getPlanet = (planet) => {
   document.querySelector("[data-temp]").innerText = planet.temperature;
 };
 
+// render earth to browser on load
+
 getPlanet(data[3]);
+
+// click event for mobile navigation
 
 hamburger.addEventListener("click", () => {
   body.classList.toggle("no__scroll");
   mobileNav.classList.toggle("hide");
   hamburgerFill.classList.toggle("dim");
+});
+
+// Update planet information when each nav link is clicked
+
+desktopLinks.forEach((link) => {
+  link.addEventListener("click", (e) => {
+    const index = desktopLinks.indexOf(link);
+    getPlanet(data[index]);
+  });
 });
