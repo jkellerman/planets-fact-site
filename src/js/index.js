@@ -8,7 +8,6 @@ const hamburgerFill = document.querySelector("[data-hamburger-fill]");
 const body = document.querySelector("body");
 const mobileNav = document.querySelector("[data-mobile-nav]");
 const desktopLinks = Array.from(document.querySelectorAll(".desktop__links"));
-console.log(desktopLinks);
 
 const getPlanet = (planet) => {
   // Split string from assets to use for adding images dynamically
@@ -18,13 +17,16 @@ const getPlanet = (planet) => {
     .replace(/\.svg/g, "");
   // dynamically render data to browser
   document.querySelector("[data-planet]").src = assets[jsonImagePath];
-  document.querySelector("[data-name]").innerText = planet.name;
+  const name = (document.querySelector("[data-name]").innerText = planet.name);
   document.querySelector("[data-content]").innerText = planet.overview.content;
   document.querySelector("[data-wiki]").href = planet.overview.source;
   document.querySelector("[data-rotation]").innerText = planet.rotation;
   document.querySelector("[data-revolution]").innerText = planet.revolution;
   document.querySelector("[data-radius]").innerText = planet.radius;
   document.querySelector("[data-temp]").innerText = planet.temperature;
+
+  // Highlight tab with background color based on planet
+  document.querySelector("[data-overview]").style.backgroundColor = "red";
 };
 
 // render earth to browser on load

@@ -1,4 +1,3 @@
-@use "abstracts" as a;
 *,
 ::after,
 ::before {
@@ -8,9 +7,9 @@
 }
 
 body {
-  background-color: a.$background;
+  background-color: var(--background);
   background-image: url("../assets/background-stars.svg");
   background-repeat: no-repeat;
   background-size: cover;
-  color: a.$text;
+  color: var(--text);
 }

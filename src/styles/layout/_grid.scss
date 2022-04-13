@@ -59,17 +59,17 @@
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 1.93px;
-  color: a.$border-color;
+  color: var(--border-color);
   padding-top: 0.25rem;
   padding-bottom: 1.25rem;
   cursor: pointer;
 
   @include a.tablet {
-    border: a.$borders;
+    border: var(--borders);
     padding: 0.75rem 1.25rem;
     max-width: 281px;
     width: 100%;
-    color: a.$text;
+    color: var(--text);
     height: 48px;
     display: flex;
     align-items: center;
@@ -83,7 +83,7 @@
 
 .tab:hover {
   @include a.tablet {
-    background-color: a.$tab-hover;
+    background-color: var(--tab-hover);
     transition: 0.25s ease-in-out;
   }
 }
@@ -98,7 +98,7 @@
 
 .num {
   margin-right: 1.0625rem;
-  color: a.$border-color;
+  color: var(--border-color);
 }
 
 .overview {
@@ -110,7 +110,7 @@
 .line {
   height: 0.5px;
   width: 100%;
-  background-color: a.$border-color;
+  background-color: var(--border-color);
   border: none;
   @include a.tablet {
     display: none;
@@ -185,7 +185,7 @@
 }
 
 .source__container {
-  color: a.$border-color;
+  color: var(--border-color);
   font-size: 0.75rem;
 
   a {

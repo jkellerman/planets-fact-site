@@ -19,7 +19,7 @@
 .fact__container {
   @include a.center-div;
   @include a.flex-row-space-between;
-  border: a.$borders;
+  border: var(--borders);
   margin-bottom: 0.5rem;
   padding: 1rem 1.5rem;
   @include a.tablet {
@@ -30,7 +30,7 @@
 }
 
 .fact__header {
-  color: a.$border-color;
+  color: var(--border-color);
   text-transform: uppercase;
   font-weight: 700;
   font-size: 0.5rem;
