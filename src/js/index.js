@@ -16,7 +16,6 @@ const image = document.querySelector("[data-planet]");
 const content = document.querySelector("[data-content]");
 const wiki = document.querySelector("[data-wiki]");
 const planetGeology = document.querySelector("[data-planet-geology]");
-console.log(planetLinks);
 
 const getPlanet = (planet) => {
   // Split string from assets to use for adding images dynamically
@@ -49,6 +48,7 @@ getPlanet(data[2]);
 hamburger.addEventListener("click", () => {
   body.classList.toggle("no__scroll");
   mobileNav.classList.toggle("hide");
+  hamburgerFill.classList.remove("fill");
   hamburgerFill.classList.toggle("dim");
 });
 
@@ -77,6 +77,8 @@ planetLinks.forEach((link) => {
     planetGeology.style.display = "none";
     mobileNav.classList.toggle("hide");
     body.classList.remove("no__scroll");
+    hamburgerFill.classList.remove("dim");
+    hamburgerFill.classList.toggle("fill");
   });
 });
 

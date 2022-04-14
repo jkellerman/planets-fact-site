@@ -26,6 +26,7 @@
     @include a.flex-column-space-between;
     align-items: flex-start;
     padding: 0.9375rem 1rem;
+    margin-bottom: 2.25rem;
   }
   @include a.large {
     margin-bottom: 3.5rem;

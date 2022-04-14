@@ -116,6 +116,10 @@ header {
   fill: var(--border-color);
 }
 
+.fill {
+  fill: var(--text);
+}
+
 .mobile__nav {
   position: fixed;
   height: 100vh;
