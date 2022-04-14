@@ -27,6 +27,9 @@
     align-items: flex-start;
     padding: 0.9375rem 1rem;
   }
+  @include a.large {
+    margin-bottom: 3.5rem;
+  }
 }
 
 .fact__header {
