@@ -76,6 +76,7 @@ planetLinks.forEach((link) => {
     surface.classList.add("tab");
     planetGeology.style.display = "none";
     mobileNav.classList.toggle("hide");
+    body.classList.remove("no__scroll");
   });
 });
 
