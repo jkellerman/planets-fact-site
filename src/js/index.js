@@ -33,8 +33,9 @@ const getPlanet = (planet) => {
   document.querySelector("[data-temp]").innerText = planet.temperature;
 
   // Highlight overview tab on pageload
-  overview.style.backgroundColor = `var(--${name.toLowerCase()})`;
-  overview.style.border = "none";
+  overview.className = "";
+  overview.classList.add("tab");
+  overview.classList.add(`fill__${name.toLowerCase()}`);
 };
 
 // render earth to browser on load
@@ -55,7 +56,10 @@ desktopLinks.forEach((link) => {
   link.addEventListener("click", (e) => {
     const index = desktopLinks.indexOf(link);
     getPlanet(data[index]);
-    removeTabStyles(structure, surface);
+    structure.className = "";
+    surface.className = "";
+    structure.classList.add("tab");
+    surface.classList.add("tab");
     planetGeology.style.display = "none";
   });
 });
@@ -65,7 +69,7 @@ overview.addEventListener("click", () => {
   // get the current innertext of h1 tag to use for color change
   const name = document.querySelector("[data-name]").innerText.toLowerCase();
   addTabStyles(overview, name);
-  removeTabStyles(structure, surface);
+  removeTabStyles(structure, surface, name);
   // Loop through array to find name that matches the current planet
   const capitalised = capitalizeFirstLetter(name);
   const planet = data.find((element) => element.name === capitalised);
@@ -84,7 +88,7 @@ structure.addEventListener("click", () => {
   // get the current innertext of h1 tag to use for color change
   const name = document.querySelector("[data-name]").innerText.toLowerCase();
   addTabStyles(structure, name);
-  removeTabStyles(overview, surface);
+  removeTabStyles(overview, surface, name);
   // Loop through array to find name that matches the current planet
   const capitalised = capitalizeFirstLetter(name);
   const planet = data.find((element) => element.name === capitalised);
@@ -104,7 +108,7 @@ surface.addEventListener("click", () => {
   // get the current innertext of h1 tag to use for color change
   const name = document.querySelector("[data-name]").innerText.toLowerCase();
   addTabStyles(surface, name);
-  removeTabStyles(overview, structure);
+  removeTabStyles(overview, structure, name);
   const capitalised = capitalizeFirstLetter(name);
   const planet = data.find((element) => element.name === capitalised);
   // add internal structure image
@@ -122,20 +126,17 @@ surface.addEventListener("click", () => {
   // add structure content
   content.innerText = planet.geology.content;
   wiki.href = planet.geology.source;
-  console.log(jsonImagePathOverview);
 });
 
 function addTabStyles(tab, color) {
-  tab.style.backgroundColor = `var(--${color.toLowerCase()})`;
-  tab.style.border = "none";
-  tab.style.transition = "0.25s ease-in-out";
+  tab.className = "";
+  tab.classList.add("tab");
+  tab.classList.add(`fill__${color.toLowerCase()}`);
 }
 
-function removeTabStyles(tab, tab2) {
-  tab.style.backgroundColor = null;
-  tab.style.border = null;
-  tab2.style.backgroundColor = null;
-  tab2.style.border = null;
+function removeTabStyles(tab, tab2, name) {
+  tab.classList.remove(`fill__${name}`);
+  tab2.classList.remove(`fill__${name}`);
 }
 
 function capitalizeFirstLetter(string) {

@@ -81,8 +81,80 @@
   }
 }
 
-.tab:hover {
+.fill__mercury {
+  border-bottom: 4px solid var(--mercury);
+  transition: 0.25s ease-in-out;
   @include a.tablet {
+    border: none;
+    background-color: var(--mercury);
+  }
+}
+.fill__venus {
+  border-bottom: 4px solid var(--venus);
+  transition: 0.25s ease-in-out;
+  pointer-events: none;
+  @include a.tablet {
+    border: none;
+    background-color: var(--venus);
+  }
+}
+.fill__earth {
+  border-bottom: 4px solid var(--earth);
+  transition: 0.25s ease-in-out;
+  pointer-events: none;
+  @include a.tablet {
+    border: none;
+    background-color: var(--earth);
+  }
+}
+.fill__mars {
+  border-bottom: 4px solid var(--mars);
+  transition: 0.25s ease-in-out;
+  pointer-events: none;
+  @include a.tablet {
+    border: none;
+    background-color: var(--mars);
+  }
+}
+.fill__jupiter {
+  border-bottom: 4px solid var(--jupiter);
+  transition: 0.25s ease-in-out;
+  pointer-events: none;
+  @include a.tablet {
+    border: none;
+    background-color: var(--jupiter);
+  }
+}
+.fill__saturn {
+  border-bottom: 4px solid var(--saturn);
+  transition: 0.25s ease-in-out;
+  pointer-events: none;
+  @include a.tablet {
+    border: none;
+    background-color: var(--saturn);
+  }
+}
+.fill__uranus {
+  border-bottom: 4px solid var(--uranus);
+  transition: 0.25s ease-in-out;
+  pointer-events: none;
+  @include a.tablet {
+    border: none;
+    background-color: var(--uranus);
+  }
+}
+.fill__neptune {
+  border-bottom: 4px solid var(--neptune);
+  transition: 0.25s ease-in-out;
+  pointer-events: none;
+  @include a.tablet {
+    border: none;
+    background-color: var(--neptune);
+  }
+}
+
+.tab:hover {
+  @include a.large {
     background-color: var(--tab-hover);
     transition: 0.25s ease-in-out;
   }
