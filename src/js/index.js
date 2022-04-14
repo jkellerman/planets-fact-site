@@ -8,6 +8,7 @@ const hamburgerFill = document.querySelector("[data-hamburger-fill]");
 const body = document.querySelector("body");
 const mobileNav = document.querySelector("[data-mobile-nav]");
 const desktopLinks = Array.from(document.querySelectorAll(".desktop__links"));
+const planetLinks = Array.from(document.querySelectorAll(".planet__link"));
 const overview = document.querySelector("[data-overview]");
 const structure = document.querySelector("[data-structure]");
 const surface = document.querySelector("[data-surface]");
@@ -15,6 +16,7 @@ const image = document.querySelector("[data-planet]");
 const content = document.querySelector("[data-content]");
 const wiki = document.querySelector("[data-wiki]");
 const planetGeology = document.querySelector("[data-planet-geology]");
+console.log(planetLinks);
 
 const getPlanet = (planet) => {
   // Split string from assets to use for adding images dynamically
@@ -61,6 +63,19 @@ desktopLinks.forEach((link) => {
     structure.classList.add("tab");
     surface.classList.add("tab");
     planetGeology.style.display = "none";
+  });
+});
+
+planetLinks.forEach((link) => {
+  link.addEventListener("click", (e) => {
+    const index = planetLinks.indexOf(link);
+    getPlanet(data[index]);
+    structure.className = "";
+    surface.className = "";
+    structure.classList.add("tab");
+    surface.classList.add("tab");
+    planetGeology.style.display = "none";
+    mobileNav.classList.toggle("hide");
   });
 });
 
