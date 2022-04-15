@@ -134,6 +134,7 @@ header {
     @include a.flex-row-space-between;
     border-bottom: var(--borders);
     padding: 1.25rem 0;
+    cursor: pointer;
   }
   li:last-of-type {
     border-bottom: none;

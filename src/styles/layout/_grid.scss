@@ -2,8 +2,8 @@
 
 .grid {
   display: grid;
-  gap: 5.9375rem;
   justify-items: center;
+  overflow: hidden;
   @include a.tablet {
     width: 90%;
     margin: 6rem auto 1.6875rem;
@@ -26,6 +26,7 @@
 }
 .tabs__container {
   width: 100%;
+  // margin-bottom: 8rem;
   @include a.tablet {
     display: flex;
     align-items: center;
@@ -193,10 +194,16 @@
 }
 
 .planet__container {
-  display: flex;
   position: relative;
-  justify-content: center;
+  height: 19rem;
+  overflow: hidden;
+
   @include a.tablet {
+    display: flex;
+    justify-content: center;
+    overflow: unset;
+    height: unset;
+    margin: unset;
     grid-column: 1 / span 2;
     min-height: 422.781px;
   }
@@ -207,10 +214,13 @@
 }
 
 .planet {
-  width: calc(100% / 2.61);
-  object-fit: contain;
+  transform: scale(0.345) translateY(15rem);
+  transform-origin: top center;
   @include a.tablet {
+    transform: unset;
+    transform-origin: unset;
     width: calc(100% / 1.58);
+    object-fit: contain;
   }
   @include a.large {
     width: 100%;
@@ -220,10 +230,10 @@
 .planet__geology {
   display: none;
   position: absolute;
-  width: 163px;
   margin-left: auto;
   margin-right: auto;
-  bottom: -30%;
+  bottom: -40%;
+  transform: scale(0.3);
 }
 
 .content__container {
