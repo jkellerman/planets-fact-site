@@ -220,6 +220,7 @@
   @include a.tablet {
     transform: unset;
     width: calc(100% / 1.58);
+    animation: planet-in 1s ease-in 750ms backwards;
   }
   @include a.large {
     animation: planet-enter 0.75s ease-in-out 1.2s 1 backwards;
@@ -263,6 +264,7 @@
   letter-spacing: 1px;
   @include a.tablet {
     margin-bottom: 1.5rem;
+    animation: name-up 1s ease-in 1s backwards;
   }
   @include a.large {
     font-size: 5rem;
@@ -364,6 +366,106 @@
 
   to {
     transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes name-up {
+  from {
+    transform: translateY(10vh);
+    opacity: 0;
+  }
+  10% {
+    transform: translateY(10vh);
+    opacity: 0;
+  }
+
+  20% {
+    transform: translateY(10vh);
+    opacity: 0;
+  }
+  30% {
+    transform: translateY(10vh);
+
+    opacity: 0;
+  }
+  40% {
+    transform: translateY(10vh);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(10vh);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(10vh);
+    opacity: 0;
+  }
+  70% {
+    transform: translateY(10vh);
+    opacity: 0;
+  }
+  80% {
+    transform: translateY(10vh);
+    opacity: 0;
+  }
+  90% {
+    transform: translateY(5vh);
+    opacity: 0.2;
+  }
+
+  to {
+    transform: translateY(0vh);
+    opacity: 1;
+  }
+}
+
+@keyframes planet-in {
+  from {
+    transform: translateX(10vw);
+    opacity: 0;
+  }
+  10% {
+    transform: translateX(10vw);
+    opacity: 0;
+  }
+
+  20% {
+    transform: translateX(10vw);
+    opacity: 0;
+  }
+  30% {
+    transform: translateX(10vw);
+
+    opacity: 0;
+  }
+  40% {
+    transform: translateX(10vw);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(10vw);
+    opacity: 0;
+  }
+  60% {
+    transform: translateX(10vw);
+    opacity: 0;
+  }
+  70% {
+    transform: translateX(10vw);
+    opacity: 0;
+  }
+  80% {
+    transform: translateX(10vw);
+    opacity: 0;
+  }
+  90% {
+    transform: translateX(5vw);
+    opacity: 0.2;
+  }
+
+  to {
+    transform: translateX(0vw);
     opacity: 1;
   }
 }
