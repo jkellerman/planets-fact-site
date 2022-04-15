@@ -62,7 +62,8 @@ desktopLinks.forEach((link) => {
     surface.className = "";
     structure.classList.add("tab");
     surface.classList.add("tab");
-    planetGeology.style.display = "none";
+    planetGeology.classList.remove("show");
+    planetGeology.classList.add("hide");
   });
 });
 
@@ -74,7 +75,8 @@ planetLinks.forEach((link) => {
     surface.className = "";
     structure.classList.add("tab");
     surface.classList.add("tab");
-    planetGeology.style.display = "none";
+    planetGeology.classList.remove("show");
+    planetGeology.classList.add("hide");
     mobileNav.classList.toggle("hide");
     body.classList.remove("no__scroll");
     hamburgerFill.classList.remove("dim");
@@ -100,7 +102,8 @@ overview.addEventListener("click", () => {
   // add structure content
   content.innerText = planet.overview.content;
   wiki.href = planet.overview.source;
-  planetGeology.style.display = "none";
+  planetGeology.classList.remove("show");
+  planetGeology.classList.add("hide");
 });
 structure.addEventListener("click", () => {
   // get the current innertext of h1 tag to use for color change
@@ -119,7 +122,8 @@ structure.addEventListener("click", () => {
   // add structure content
   content.innerText = planet.structure.content;
   wiki.href = planet.structure.source;
-  planetGeology.style.display = "none";
+  planetGeology.classList.remove("show");
+  planetGeology.classList.add("hide");
 });
 
 surface.addEventListener("click", () => {
@@ -139,7 +143,8 @@ surface.addEventListener("click", () => {
     .pop()
     .replace(/\.svg/g, "");
   image.src = assets[jsonImagePathOverview];
-  planetGeology.style.display = "block";
+  planetGeology.classList.remove("show");
+  planetGeology.classList.add("show");
   planetGeology.src = assetsPng[jsonImagePath];
   // add structure content
   content.innerText = planet.geology.content;

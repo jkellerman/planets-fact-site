@@ -1,10 +1,15 @@
 @use "abstracts" as a;
 
 .grid {
-  display: grid;
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
   @include a.tablet {
+    display: grid;
+    justify-items: center;
+    align-items: center;
     width: 90%;
     margin: 6rem auto 1.6875rem;
     grid-template-columns: repeat(2, 1fr);
@@ -194,17 +199,17 @@
 }
 
 .planet__container {
-  position: relative;
-  height: 19rem;
-  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 305px;
 
   @include a.tablet {
     display: flex;
-    justify-content: center;
-    overflow: unset;
-    height: unset;
     margin: unset;
     grid-column: 1 / span 2;
+    width: unset;
     min-height: 422.781px;
   }
   @include a.large {
@@ -214,8 +219,7 @@
 }
 
 .planet {
-  transform: scale(0.345) translateY(15rem);
-  transform-origin: top center;
+  transform: scale(0.3);
   @include a.tablet {
     transform: unset;
     transform-origin: unset;
@@ -228,12 +232,17 @@
 }
 
 .planet__geology {
-  display: none;
   position: absolute;
-  margin-left: auto;
-  margin-right: auto;
-  bottom: -40%;
-  transform: scale(0.3);
+  transform: scale(0.2);
+  top: 9.5rem;
+
+  @include a.tablet {
+    transform: scale(0.3);
+    top: 25rem;
+  }
+  @include a.large {
+    top: 28rem;
+  }
 }
 
 .content__container {
@@ -290,8 +299,10 @@
 
   a {
     @extend .source__container;
-    @include a.tablet {
-      font-weight: 700;
-    }
+    font-weight: 700;
   }
+}
+
+.source__icon {
+  transform: translateY(0.1rem);
 }
