@@ -57,6 +57,16 @@
   }
   @include a.large {
     transform: translateY(-4.5rem);
+    @for $i from 1 through 3 {
+      .tab:nth-of-type(#{$i}) {
+        animation: text-enter
+          1s
+          ease-in-out
+          (1.7s + ($i - 1) * 0.1s)
+          1
+          backwards;
+      }
+    }
   }
 }
 
@@ -206,11 +216,14 @@
 
 .planet {
   transform: scale(0.3);
+
   @include a.tablet {
     transform: unset;
     width: calc(100% / 1.58);
   }
   @include a.large {
+    animation: planet-enter 0.75s ease-in-out 1.2s 1 backwards;
+    backface-visibility: hidden;
     width: 100%;
   }
 }
@@ -253,6 +266,7 @@
   }
   @include a.large {
     font-size: 5rem;
+    animation: text-enter 1s ease-in-out 1.5s 1 backwards;
   }
 }
 
@@ -273,6 +287,7 @@
     font-size: 0.875rem;
     width: 95%;
     height: 154px;
+    animation: text-enter 1s ease-in-out 1.6s 1 backwards;
   }
 }
 
@@ -284,8 +299,71 @@
     @extend .source__container;
     font-weight: 700;
   }
+
+  @include a.large {
+    animation: text-enter 1s ease-in-out 1.7s 1 backwards;
+  }
 }
 
 .source__icon {
   transform: translateY(0.1rem);
+}
+
+@keyframes planet-enter {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes text-enter {
+  from {
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+  10% {
+    transform: translateX(90vw);
+    opacity: 0.1;
+  }
+
+  20% {
+    transform: translateX(80vw);
+    opacity: 0.1;
+  }
+  30% {
+    transform: translateX(70vw);
+    opacity: 0.1;
+  }
+  40% {
+    transform: translateX(60vw);
+    opacity: 0.1;
+  }
+  50% {
+    transform: translateX(50vw);
+    opacity: 0.1;
+  }
+  60% {
+    transform: translateX(40vw);
+    opacity: 0.1;
+  }
+  70% {
+    transform: translateX(30vw);
+    opacity: 0.1;
+  }
+  80% {
+    transform: translateX(20vw);
+    opacity: 0.1;
+  }
+  90% {
+    transform: translateX(10vw);
+    opacity: 0.2;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }

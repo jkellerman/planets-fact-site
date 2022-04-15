@@ -3,6 +3,9 @@
 header {
   border-bottom: var(--borders);
   margin-bottom: 1.25rem;
+  @include a.large {
+    animation: desktop-nav-enter 1s ease-in 3s backwards;
+  }
 }
 
 .header {
@@ -204,5 +207,11 @@ header {
 @keyframes nav-enter {
   from {
     transform: translateX(-100vw);
+  }
+}
+
+@keyframes desktop-nav-enter {
+  from {
+    transform: translateY(-100vh);
   }
 }
