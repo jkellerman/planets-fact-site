@@ -84,7 +84,7 @@ planetLinks.forEach((link) => {
   });
 });
 
-// click event for internal structure tab
+// click events for tabs
 overview.addEventListener("click", () => {
   // get the current innertext of h1 tag to use for color change
   const name = document.querySelector("[data-name]").innerText.toLowerCase();
@@ -93,13 +93,13 @@ overview.addEventListener("click", () => {
   // Loop through array to find name that matches the current planet
   const capitalised = capitalizeFirstLetter(name);
   const planet = data.find((element) => element.name === capitalised);
-  // add internal structure image
+  // add overview image
   const jsonImagePath = planet.images.planet
     .split("/")
     .pop()
     .replace(/\.svg/g, "");
   image.src = assets[jsonImagePath];
-  // add structure content
+  // add overview content
   content.innerText = planet.overview.content;
   wiki.href = planet.overview.source;
   planetGeology.classList.remove("show");
@@ -133,7 +133,7 @@ surface.addEventListener("click", () => {
   removeTabStyles(overview, structure, name);
   const capitalised = capitalizeFirstLetter(name);
   const planet = data.find((element) => element.name === capitalised);
-  // add internal structure image
+  // add surface image
   const jsonImagePath = planet.images.geology
     .split("/")
     .pop()
@@ -146,7 +146,7 @@ surface.addEventListener("click", () => {
   planetGeology.classList.remove("show");
   planetGeology.classList.add("show");
   planetGeology.src = assetsPng[jsonImagePath];
-  // add structure content
+  // add surface content
   content.innerText = planet.geology.content;
   wiki.href = planet.geology.source;
 });
