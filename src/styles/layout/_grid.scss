@@ -216,6 +216,7 @@
 
 .planet {
   transform: scale(0.3);
+  animation: planet-in-mobile 1s ease-in 750ms backwards;
 
   @include a.tablet {
     transform: unset;
@@ -262,9 +263,10 @@
   margin-bottom: 1rem;
   text-transform: uppercase;
   letter-spacing: 1px;
+  animation: name-up 1s ease-in 1s backwards;
+
   @include a.tablet {
     margin-bottom: 1.5rem;
-    animation: name-up 1s ease-in 1s backwards;
   }
   @include a.large {
     font-size: 5rem;
@@ -416,6 +418,55 @@
 
   to {
     transform: translateY(0vh);
+    opacity: 1;
+  }
+}
+
+@keyframes planet-in-mobile {
+  from {
+    transform: translateX(100vw) scale(0.3);
+    opacity: 0;
+  }
+  10% {
+    transform: translateX(90vw) scale(0.3);
+    opacity: 0;
+  }
+
+  20% {
+    transform: translateX(80vw) scale(0.3);
+    opacity: 0;
+  }
+  30% {
+    transform: translateX(10vw) scale(0.3);
+    opacity: 0;
+  }
+  40% {
+    transform: translateX(70vw scale(0.3));
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(60vw) scale(0.3);
+    opacity: 0;
+  }
+  60% {
+    transform: translateX(50vw) scale(0.3);
+    opacity: 0;
+  }
+  70% {
+    transform: translateX(40vw) scale(0.3);
+    opacity: 0;
+  }
+  80% {
+    transform: translateX(30vw) scale(0.3);
+    opacity: 0;
+  }
+  90% {
+    transform: translateX(5vw) scale(0.3);
+    opacity: 0.2;
+  }
+
+  to {
+    transform: translateX(0vw) scale(0.3);
     opacity: 1;
   }
 }
