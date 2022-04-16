@@ -26,7 +26,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Solution](https://github.com/jkellerman/planets-fact-site)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Live](https://jkellerman.github.io/planets-fact-site/)
 
 ## My process
 
