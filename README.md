@@ -55,7 +55,7 @@ Note - I learned that when using parcel bundler, you will also need to import an
 import assets from "../assets/*.svg";
 ```
 
-In this project, I delve a bit deeper into using SCSS, using mixins, loops & @extend. The snippet below shows a loop where each nav link is given a different color when hovered. Instead of writing out lines of code for all 8 planets, here only a few lines have been written with the same results. I also used a similar formula for the mobile navigation animation, creating a delayed transition for each nav link.
+In this project, I delve a bit deeper into Sass, using mixins, loops & @extend. The snippet below shows a loop where each nav link is given a different color when hovered. Instead of writing out lines of code for all 8 planets, here only a few lines have been written with the same results. I also used a similar formula for the mobile navigation animation, creating a delayed transition for each nav link.
 
 ```scss
 @for $i from 1 through length(a.$colors) {
@@ -75,7 +75,7 @@ In this project, I delve a bit deeper into using SCSS, using mixins, loops & @ex
 }
 ```
 
-In order to add images dynamically, I needed to get the correct string to enter into the src link. A quick and easy way to this was to use split, pop and replace methods together.
+In order to add images dynamically, I needed to get the correct string to enter into the src link. A quick and easy way to do this was to use split, pop and replace methods together.
 
 ```js
 const jsonImagePath = planet.images.planet
@@ -84,7 +84,7 @@ const jsonImagePath = planet.images.planet
   .replace(/\.svg/g, "");
 ```
 
-Each planet has a source link to wikipedia. Clicking on the link and going back to the webpage is annoying, especially as this webpage as animations on each load. To get around this I used target blank so the link would open up in a new tab. I also learned about noreferrer and noopener which is inserted into the html to prevent a type of phishing known as tabnapping.
+Each planet has a source link to Wikipedia. Clicking on the link and going back to the webpage is annoying for the user, especially as this webpage has animations on each load. To get around this I used target blank so the link would open in a new tab. I also learned about noreferrer and noopener which are inserted into the html to prevent a type of phishing known as [tabnapping](https://www.freecodecamp.org/news/how-to-use-html-to-open-link-in-new-tab/).
 
 ```html
 <a data-wiki href="#" target="_blank" rel="noreferrer noopener">Wikipedia</a>
@@ -92,9 +92,9 @@ Each planet has a source link to wikipedia. Clicking on the link and going back 
 
 ### Useful resources
 
-- [SASS Documentation](https://sass-lang.com/documentation) - This helped me with learning new syntax for sass.
-- [Stack Overflow](https://stackoverflow.com/questions/41282244/prevent-parent-expanding-when-transformscale-used-on-child) - This tip really helped me when trying to scale images without it affecting the space around it. I was having trouble with the parent element expanding when I put a transform scale on the planet images. The trick was to have a height set in px to the parent element. Also needed display flex with justify center and align items center to keep it centered.
+- [SASS Documentation](https://sass-lang.com/documentation) - This helped me with learning new syntax for Sass.
+- [Stack Overflow](https://stackoverflow.com/questions/41282244/prevent-parent-expanding-when-transformscale-used-on-child) - This tip really helped me when trying to scale images without affecting the space around it. I was having trouble with the parent element expanding when I put a transform scale on each planet image. I wanted to do this so that each planet is not rendered as the same size. The trick was to have height set in px to the parent element. It also needed display flex with justify center and align items center to keep it centered.
 
 ## Author
 
-- Website - [JoshKellerman] - Website coming soon
+[JoshKellerman] - Website coming soon
