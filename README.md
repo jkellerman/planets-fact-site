@@ -11,7 +11,6 @@ This is a solution to the [Planets fact site challenge on Frontend Mentor](https
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Useful resources](#useful-resources)
-- [Author](#author)
 
 ## Overview
 
@@ -32,7 +31,7 @@ Users should be able to:
 
 ### Built with
 
-- HTML5 markup
+- Semantic HTML5 markup
 - SCSS
 - Flexbox
 - CSS Grid
@@ -94,7 +93,3 @@ Each planet has a source link to Wikipedia. Clicking on the link and going back 
 
 - [SASS Documentation](https://sass-lang.com/documentation) - This helped me with learning new syntax for Sass.
 - [Stack Overflow](https://stackoverflow.com/questions/41282244/prevent-parent-expanding-when-transformscale-used-on-child) - This tip really helped me when trying to scale images without affecting the space around it. I was having trouble with the parent element expanding when I put a transform scale on each planet image. I wanted to do this so that each planet is not rendered as the same size. The trick was to have height set in px to the parent element. It also needed display flex with justify center and align items center to keep it centered.
-
-## Author
-
-[JoshKellerman] - Website coming soon
