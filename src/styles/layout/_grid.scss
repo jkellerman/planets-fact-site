@@ -99,6 +99,7 @@
 
 .fill__mercury {
   border-bottom: 4px solid var(--mercury);
+  pointer-events: none;
   @include a.tablet {
     transition: 0.25s ease-in-out;
     border: none;
